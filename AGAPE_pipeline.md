@@ -5,10 +5,22 @@ Given that many using it wil be first timers to Unix and the Command Line I thou
 
 ##Overview
 
+I would suggest completing the pipeline install in the following order (because many of the later software depends on the earlier software:
 
+ 1 bamtools
+ 2 sga
+ 3 lastz
+ 4 augustus
+ 5 NCBI BLAST
+ 6 Boost
+ 7 Chain NET
+ 8 AGAPE
+ 9 BWA
+ 10 SAMtools
 
 ##Operating system
 This guide is specifically written for installation on Ubuntu server 14.04.3. I chose this specifically because many of the programs have apt-get repositories already which vastly simplify the installation process. Some (but not many) of the software has RedHet yum equivalents, so if you're using a non-debian linux distribution be prepared for a lot of building from source code and the associated pain.
+
 If you are new to linux I would HIGHLY recommend starting with Ubuntu, getting the pipeline working and having a play and then getting your HPC techician to help with installation on the cluster itself (which may well not be on a debian system).
 Remember that, once installation is complete and sucessful, the command line commands will be the same regardless of the flavour of linux you are using. So all your hard work, testing and practice on Ubuntu will not be in vain!
 
@@ -27,7 +39,7 @@ Remember that, once installation is complete and sucessful, the command line com
 
 ###Installing bamtools
 
-Yes there is an `apt-get` package for bamtools but it is (as of May 2016) bamtools.2.3.0 which is insuffucuently recent for this pipeline hence why we're building from source.
+Yes there is an `apt-get` package for bamtools but it is (as of May 2016) bamtools.2.3.0 which is insufficuently recent for this pipeline hence why we're building from source.
 
 `git clone https://www.github.com/pezmaster31/bamtools`
 
