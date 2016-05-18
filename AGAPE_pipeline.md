@@ -7,16 +7,16 @@ Given that many using it wil be first timers to Unix and the Command Line I thou
 
 I would suggest completing the pipeline install in the following order (because many of the later software depends on the earlier software:
 
- 1 bamtools
- 2 sga
- 3 lastz
- 4 augustus
- 5 NCBI BLAST
- 6 Boost
- 7 Chain NET
- 8 AGAPE
- 9 BWA
- 10 SAMtools
+1. bamtools
+2. sga
+3. lastz
+4. augustus
+5. NCBI BLAST
+6. Boost
+7. Chain NET
+8. AGAPE
+9. BWA
+10. SAMtools
 
 ##Operating system
 This guide is specifically written for installation on Ubuntu server 14.04.3. I chose this specifically because many of the programs have apt-get repositories already which vastly simplify the installation process. Some (but not many) of the software has RedHet yum equivalents, so if you're using a non-debian linux distribution be prepared for a lot of building from source code and the associated pain.
