@@ -64,6 +64,19 @@ Must now copy bamtools.so to /usr/lib/
 
 `sudo cp -R api /usr/include/bamtools/api`
 
+###Actually installing sga
+
+Then:
+`cd src`
+
+`./autogen.sh` 
+
+`./configure --with-bamtools=/home/fogbank/Bioinfotools/bamtools`  
+
+`make`
+
+`make install`
+
 
 ##Installing NCBI BLAST command line tool
 
