@@ -164,15 +164,19 @@ must add header to SGA and ABySS files
 `sga preprocess --pe-mode 1 inputfile1.sra.fastq inputfile2.sra.fastq > output_paired_end.pp.fa`
 
 possibly need to gunzip files before preprocessing??
+`gunzip filename`
 
 `sga preprocess --pe-mode 1 inputfile1.fastq.gz inputfile2.fastq.gz > output_paired_end.fastq`
-takes about 128 seconds
+takes about 128 seconds, 190 with unzipped files
 
 `sga index -a ropebwt -t 8 --no-reverse output_paired_end.fastq`
 takes about 553 seconds with 2 cores (-t 2)
+takes about 286 seconds with 8 cores (-t 8)
 
-`sga correct -k 41 -t 1 --discard --learn output_paired_end.bwt -o output_paired_end.pp.ec.fa`
-takes about cd AGA  seconds with 1 core
+`sga correct -k 41 -t 1 --discard --learn output_paired_end.pp.fa -o output_paired_end.pp.ec.fa`
+takes about    seconds with 1 core
+
+
 
 ##To Do
 - [ ] Install HugeSeq and dependancies.
