@@ -124,6 +124,12 @@ These should already be installed but it pays to check they are:
 
 `sudo apt-get install abyss`
 
+add abyss subcommands to PATH
+
+`nano ~/.bashrc`
+
+`export PATH = /usr/lib/abyss:$PATH`
+
 ##Installing AGAPE
 
 `git clone https://github.com/yeastgenome/AGAPE`
@@ -183,6 +189,15 @@ takes about __ seconds
 
 `sga-align --name gDNA_paired_end.frag gDNA_paired_end-contigs.fa gDNA_paired_end.pp.ec.fa`
 takes about 456 seconds
+
+`sga-bam2de.pl -n 5 -m 100 -mina 95 -- prefix gDNA_paired_end.frag gDNA_paired_end.frag.bam`
+takes a couple of minutes
+
+`sga-astat.py -m 100 gDNA_paired_end.frag.refsort.bam > gDNA_paired_end.ctg.astat`
+takes < 1 minute
+
+`sga scaffold -m 100 --pe gDNA_paired_end.frag.de -a gDNA_paired_emd.ctg.astat -o gDNA_paired_emn.scaf` gDNA_paired_end-contigs.fa`
+takes < 1 minute
 
 
 
