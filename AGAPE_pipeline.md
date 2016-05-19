@@ -174,8 +174,11 @@ takes about 553 seconds with 2 cores (-t 2)
 takes about 286 seconds with 8 cores (-t 8)
 
 `sga correct -k 41 -t 1 --discard --learn output_paired_end.pp.fa -o output_paired_end.pp.ec.fa`
-takes about    seconds with 1 core
+takes about  8870 seconds with 1 core (-t 1)
+takes about seconds with 8 cores (-t 8)
 
+`abyss-pe aligner=map k=41 name=gNDA_paired_end in=gDNA_paired_end.pp.ec.fa`
+Tag `np=8` can be used to create multiple processes. Can be distributed using openmpi
 
 
 ##To Do
