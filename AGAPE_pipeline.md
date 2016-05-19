@@ -179,6 +179,11 @@ takes about seconds with 8 cores (-t 8)
 
 `abyss-pe aligner=map k=41 name=gNDA_paired_end in=gDNA_paired_end.pp.ec.fa`
 Tag `np=8` can be used to create multiple processes. Can be distributed using openmpi
+takes about __ seconds
+
+`sga-align --name gDNA_paired_end.frag gDNA_paired_end-contigs.fa gDNA_paired_end.pp.ec.fa`
+takes about 456 seconds
+
 
 
 ##To Do
