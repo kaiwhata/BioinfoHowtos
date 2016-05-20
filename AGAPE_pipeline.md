@@ -199,7 +199,21 @@ takes < 1 minute
 `sga scaffold -m 100 --pe gDNA_paired_end.frag.de -a gDNA_paired_emd.ctg.astat -o gDNA_paired_emn.scaf` gDNA_paired_end-contigs.fa`
 takes < 1 minute
 
+###BWA commands
 
+`bwa index ref_gen.fsa`
+takes < 1 minute
+
+At this point we decided to use the non SGA-error corrected reads as inputs. This should be checked or justified.
+We also changed k from 2.
+`bwm aln -q 15 -l 35 -k 2 -n 0.04 -o 2 -e 6 -t 8 ref_gen.fa gDNA_fromhERstrain_1.fastq > bwm_aligned_1.sai`
+`bwm aln -q 15 -l 35 -k 2 -n 0.04 -o 2 -e 6 -t 8 ref_gen.fa gDNA_fromhERstrain_2.fastq > bwm_aligned_2.sai`
+
+`bwa aln -q 15 -l 35 -k 2 -n 0.04 -o 2 -e 6 -t 8 ref_gen.fa  gDNA_paired_end.pp.ec.fa > bwm_aligned.sai`
+takes about 1000 seconds across 8 cores
+
+`bwa sampe ref_gen.fa bwn_aligned.sai > aln-pe.sam`
+takes about  seconds 
 
 ##To Do
 - [ ] Install HugeSeq and dependancies.
