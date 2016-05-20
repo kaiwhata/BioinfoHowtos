@@ -205,15 +205,20 @@ takes < 1 minute
 takes < 1 minute
 
 At this point we decided to use the non SGA-error corrected reads as inputs. This should be checked or justified.
-We also changed k from 2.
+We also left k as 2.
 `bwm aln -q 15 -l 35 -k 2 -n 0.04 -o 2 -e 6 -t 8 ref_gen.fa gDNA_fromhERstrain_1.fastq > bwm_aligned_1.sai`
+takes about 153 seconds across 8 cores
 `bwm aln -q 15 -l 35 -k 2 -n 0.04 -o 2 -e 6 -t 8 ref_gen.fa gDNA_fromhERstrain_2.fastq > bwm_aligned_2.sai`
+takes about 161 seconds across 8 cores
 
-`bwa aln -q 15 -l 35 -k 2 -n 0.04 -o 2 -e 6 -t 8 ref_gen.fa  gDNA_paired_end.pp.ec.fa > bwm_aligned.sai`
+`bwa aln -q 15 -l 35 -k 6 -n 0.04 -o 2 -e 6 -t 8 ref_gen.fa  gDNA_paired_end.pp.ec.fa > bwm_aligned_6.sai`
 takes about 1000 seconds across 8 cores
 
-`bwa sampe ref_gen.fa bwn_aligned.sai > aln-pe.sam`
-takes about  seconds 
+`bwa sampe ref_gen.fa bwn_aligned_1.sai bwm_aligned_2.sai gDNA_fromhERstrain_1.fastq gDNA_fromhERstrain_1.fastq > aln-pe.sam`
+takes about 1 minute  - aborted :(
+
+`bwa samse ref_gen.fa bwn_aligned.sai gDNA_paired_end.pp.ec.fa  > aln-se.sam`
+takes about __ seconds
 
 ##To Do
 - [ ] Install HugeSeq and dependancies.
