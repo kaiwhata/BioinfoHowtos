@@ -229,6 +229,29 @@ takes some time
 `samtools sort aln.bam aln.sorted`
 takes about 5 minutes
 
+`samtools view -u -f 4 -F 264 aln.sorted.bam > unmapped_temp1.bam`
+
+`samtools view -u -f 8 -F 260 aln.sorted.bam > unmapped_temp2.bam`
+
+`samtools view -u -f 12 -F 256 aln.sorted.bam > unmapped_temp3.bam`
+
+`samtools merge -u all_unmapped.bam unmapped_temp1.bam unmapped_temp2.bam unmapped_temp3.bam`
+
+`samtools sort all_unmapped.bam all_unmapped.sorted.bam`
+
+takes about 30 seconds each
+
+`sudo apt-get install bedtools`
+
+`samtools fixmate all_unmapped.sorted.bam all_unmapped.fixmate.bam`
+less than a minute but maybe unncessary
+
+`bamToFastq -i all_unmapped.fixmate.bam -fq all_unmapped_reads1.fastq -fq2 all_unmapped_reads2.fastq`
+about a minute with lots of warnings!
+
+
+
+
 
 ##To Do
 - [ ] Install HugeSeq and dependancies.
