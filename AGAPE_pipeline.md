@@ -220,6 +220,16 @@ takes about 1 minute  - aborted :(
 `bwa samse ref_gen.fa bwn_aligned.sai gDNA_paired_end.pp.ec.fa  > aln-se.sam`
 takes about __ seconds
 
+`bwa mem -t 8 ref_gen.fsa gDNA_fromhERstrain_1.fastq gDNA_fromhERstrain_2.fastq > paired_reads_mem.sam`
+takes about 440 seconds
+
+`samtools view -bo aln.bam -S`
+takes some time
+
+`samtools sort aln.bam aln.sorted`
+takes about 5 minutes
+
+
 ##To Do
 - [ ] Install HugeSeq and dependancies.
 - [ ] Install BOWTIE as a possible replacement fot LASTZ.
