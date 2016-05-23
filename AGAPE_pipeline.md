@@ -183,7 +183,7 @@ takes about 286 seconds with 8 cores (-t 8)
 takes about  8870 seconds with 1 core (-t 1)
 takes about seconds with 8 cores (-t 8)
 
-`abyss-pe aligner=map k=41 name=gNDA_paired_end in=gDNA_paired_end.pp.ec.fa`
+`abyss-pe aligner=map k=41 name=gDNA_paired_end in=gDNA_paired_end.pp.ec.fa`
 Tag `np=8` can be used to create multiple processes. Can be distributed using openmpi
 takes about __ seconds
 
@@ -249,8 +249,12 @@ less than a minute but maybe unncessary
 `bamToFastq -i all_unmapped.fixmate.bam -fq all_unmapped_reads1.fastq -fq2 all_unmapped_reads2.fastq`
 about a minute with lots of warnings!
 
+`abyss-pe aligner=map k=41 name=all_unmapped_reads lib='pe1' pe1='all_unmapped_reads1.fastq all_unmapped_reads2.fastq'`
+a couple minutes
 
+then should have a script that discard any read less than 300 bp in length from the all_unmapped_reads-scaffolds.fa
 
+`lastz T=2 Y=3400 all_unmapped_reads-scaffolds.fa gDNA_paired_end-scaffolds.fa --ambiguous=iupac --format=maf > all_unmapped_reads.maf`
 
 
 ##To Do
