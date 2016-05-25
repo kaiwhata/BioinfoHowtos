@@ -163,6 +163,20 @@ Otherwise, by default, lastz will be created in a folder called `lastz-distib` i
 
 `sudo apt-get install samtools`
 
+##Installing R
+
+`sudo apt-get install littler`
+
+##Installing KmerGenie
+
+`wget http://kmergenie.bx.psu.edu/kmergenie-1.7016.tar.gz`
+
+`tar -xzf kmergenie-1.7016.tar.gz`
+
+`make`
+
+`sudo make install`
+
 #Usage
 
 must add header to SGA and ABySS files
