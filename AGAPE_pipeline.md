@@ -157,7 +157,17 @@ Otherwise, by default, lastz will be created in a folder called `lastz-distib` i
 
 ##Installing BWA
 
-`sudo apt-get install bwa`
+`sudo apt-get install bwa` - only do this if you are planning on using bwa mem, there is a bug in bwa 0.7.5a
+
+Instead:
+`wget https://sourceforge.net/projects/bio-bwa/files/bwa-0.7.4.tar.bz2`
+
+`tar -xzf bwa-0.7.4.tar.bz2`
+
+`cd bwa-0.7.4.tar.bz2; make`
+
+Or instructions here: https://github.com/lh3/bwa
+
 
 ##Installing SAMtools
 
